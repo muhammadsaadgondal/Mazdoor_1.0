@@ -1,0 +1,255 @@
+body {
+    background-color: #f8f9fa;
+}
+
+
+.profile-container {
+    max-width: 1200px;
+    margin: 50px auto;
+}
+
+.profile-card {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cover-photo {
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #dee2e6; /* Optional: border style for the div */
+    border-radius: 10px; /* Optional: border-radius for the div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cover-photo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; 
+}
+
+.profile-photo {
+    float: left;
+    margin-top: -80px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire container while maintaining aspect ratio */
+    border-radius: 50%;
+    display: block; /* Removes default inline styles applied to images */
+}
+
+
+.profile-info {
+    padding: 20px;
+    overflow: hidden;
+}
+
+.name-location {
+    float: left;
+    margin-top: 10px;
+}
+
+.name-location h5 {
+    margin-bottom: 0;
+}
+
+.connect-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    float: right;
+}
+
+.content-container {
+    margin-top: 20px;
+}
+
+.navbar-card {
+    border: none;
+    box-shadow: none;
+}
+
+.nav-link {
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    transition: border-bottom 0.3s, color 0.3s;
+}
+
+.nav-link.active {
+    color: #000;
+    border-bottom: 2px solid #007bff;
+}
+
+.nav-link:not(.active):hover {
+    color: #000;
+}
+
+.bio-section,
+.review-section {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.bio-section h2,
+.review-section h2 {
+    color: #007bff;
+}
+
+.review-section {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.review {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dee2e6; /* Add a border between reviews */
+    padding-bottom: 15px; /* Add some spacing between reviews */
+}
+
+.reviewer-info {
+    display: flex;
+    align-items: center;
+}
+
+.reviewer-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.skill-tags-section{
+    text-align: center;
+    min-height: 200px;
+    padding: 20px;
+}
+.name-time {
+    flex-grow: 1;
+    /* margin-left: 40%; */
+}
+
+.rating {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.review-content {
+    margin-top: 10px;
+}
+.main-nav{
+    background-color: yellowgreen;
+}
+
+/* New styles for Work Experience Section */
+
+.total-jobs-rating-section {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.total-jobs,
+.rating {
+    flex: 1;
+}
+
+.vertical-line {
+    border-left: 1px solid #ccc;
+    height: 50px;
+}
+
+.vertical-line-hr {
+    height: 100%;
+    border: none;
+    border-left: 1px solid #ccc;
+}
+
+.skill-tags-section.card {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.skill-tags-section h2 {
+    color: #007bff;
+}
+
+/* Profile Settins */
+
+.profile-settings-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-settings-section h2 {
+    color: #333;
+}
+
+.profile-settings-section form {
+    margin-top: 20px;
+}
+
+.profile-settings-section label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.profile-settings-section textarea,
+.profile-settings-section input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.profile-settings-section button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-settings-section button:hover {
+    background-color: #0056b3;
+}
+
+.profile-settings-section p {
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.profile-settings-section [name="delete_account"] {
+    background-color: #dc3545;
+}

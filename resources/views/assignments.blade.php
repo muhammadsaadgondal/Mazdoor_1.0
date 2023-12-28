@@ -6,6 +6,9 @@
     <div class="row justify-content-center">
         <!-- Individual Assignment Card -->
         <div class="col-md-6 mb-4">
+            @if($assignments->isEmpty())
+            <p class="text-center">No results found.</p>
+            @else
             @foreach($assignments as $assignment)
             <div class="card">
                 <img src="https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZWxlY3RyaWNpYW58ZW58MHx8MHx8fDA%3D" class="card-img-top mx-auto mt-3" alt="Assignment Image">
@@ -18,6 +21,7 @@
                 </div>
             </div>
             @endforeach
+            @endif
         </div>
 
         <!-- Add more assignment cards as needed -->

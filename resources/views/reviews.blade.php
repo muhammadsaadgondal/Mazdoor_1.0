@@ -8,6 +8,9 @@
     </div>
     <!-- Individual Review -->
     <div class="review-section" id="review-section">
+        @if($reviews->isEmpty())
+        <p class="text-center">No results found.</p>
+        @else
         @foreach($reviews as $review)
         <div class="review">
             <div class="reviewer-info">
@@ -24,10 +27,11 @@
             <p class="review-content">{{$review->comment}}</p>
         </div>
         @endforeach
+        @endif
 
     </div>
 
-    <button id="fetchMoreBtn" onclick="fetchMoreReviews()">Fetch More</button>
+    <button class="btn btn-primary" style="margin: 10px;" id="fetchMoreBtn" onclick="fetchMoreReviews()">Fetch More</button>
 </div>
 
 <script>

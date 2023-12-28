@@ -71,6 +71,8 @@ class SPController extends Controller
     {
         $user = $request->session()->get("user");
         $serviceprovider = DB::select("SELECT * FROM serviceprovider where username = '$user->username'");
+
+        $skills = DB::select("SELECT * FROM skill where serviceprovider_username = '$user->username'");
         if ($serviceprovider) {
             $assignments = DB::table('assignment')
                 ->join('offer', 'assignment.offer_id', '=', 'offer.offer_id')
@@ -78,7 +80,12 @@ class SPController extends Controller
                 ->select('assignment.*', 'offer.*')
                 ->get();
 
-            return view('assignments', ['user' => $user, 'serviceprovider' => $serviceprovider[0], 'assignments' => $assignments]);
+            return view('assignments', [
+                'user' => $user,
+                'serviceprovider' => $serviceprovider[0],
+                'assignments' => $assignments,
+                'skills'=>$skills
+            ]);
         }
     }
 
@@ -101,16 +108,23 @@ class SPController extends Controller
 
         return $persons;
     }
-    public function showOffers()
+    public function showOffers(Request $request)
     {
-        // $user = DB::select("select * from student");
-        return view('offers');
+        $user = $request->session()->get("user");
+        $serviceprovider = DB::select("SELECT * FROM serviceprovider where username = '$user->username'");
+        $offers = DB::table('offer')
+            ->join('job', 'offer.job_id', '=', 'job.job_id')
+            ->join('site', 'job.site_id', '=', 'site.site_id')
+            ->select('offer.*')
+            ->where('site.person_username', $user->username)
+            ->get();
+        return view('offers', ['user' => $user, 'serviceprovider' => $serviceprovider[0], 'offers' => $offers]);
     }
     public function showSettings(Request $request)
     {
         $user = $request->session()->get("user");
         $serviceprovider = DB::select("SELECT * FROM serviceprovider where username = '$user->username'");
 
-        return view('settings',['user'=>$user,'serviceprovider'=>$serviceprovider[0]]);
+        return view('settings', ['user' => $user, 'serviceprovider' => $serviceprovider[0]]);
     }
 }

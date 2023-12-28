@@ -43,7 +43,7 @@ class loginPage extends Controller
             return redirect('/assignments');
         }
         else
-            return redirect('/serviceproviderSignupPage');
+            return view('serviceproviderSignupPage');
     }
 
     public function switchC(Request $request){

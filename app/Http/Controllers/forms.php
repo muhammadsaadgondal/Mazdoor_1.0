@@ -41,7 +41,7 @@ class forms extends Controller
 
 
     function addOffer(Request $request){
-
+        redirect('addOffer');
     }
 
     function addSkill(Request $request){

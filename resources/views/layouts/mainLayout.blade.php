@@ -72,7 +72,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('offers') ? 'active' : '' }}" href="{{ route('search') }}">Search</a>
+                                <a class="nav-link {{ request()->routeIs('offers') ? 'active' : '' }}" href="{{ route('offers') }}">Offers</a>
                             </li>
 
                             <li class="nav-item">

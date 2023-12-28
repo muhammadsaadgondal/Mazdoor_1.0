@@ -48,7 +48,7 @@
                     <div class="profile-info">
                         <div class="name-location">
                             <h5 class="card-title">{{$user->f_name}} {{$user->l_name}}</h5>
-                            <p class="card-text">{{$user->picture}}.</p>
+                            <p class="card-text">{{$user->username}}.</p>
                         </div>
 
                         <button class="btn btn-primary connect-btn">Connect</button>

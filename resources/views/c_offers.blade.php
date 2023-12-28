@@ -5,9 +5,11 @@
 @section('sectionX')
 <div class="offers-section mt-4 justify-content-center ">
     <h2 class="text-center ">Offers</h2>
-
-    <div class="row" >
-       @foreach($offers as $offer)
+    @if($offers->isEmpty())
+    <p class="text-center">No results found.</p>
+    @else
+    <div class="row">
+        @foreach($offers as $offer)
         <div class="col-md-6 mb-4 ">
             <div class="card">
                 <div class="card-body">
@@ -20,8 +22,9 @@
             </div>
         </div>
         @endforeach
-        <!-- Add more offer cards as needed -->
     </div>
+    
+    @endif
 </div>
 
 @endsection

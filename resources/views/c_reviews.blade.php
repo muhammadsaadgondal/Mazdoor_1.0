@@ -6,15 +6,17 @@
         <h2 class="text-center">Reviews</h2>
 
         <!-- Search Bar -->
-       
-    </div>
 
+    </div>
+    @if($reviews->isEmpty())
+    <p class="text-center">No results found.</p>
+    @else
     @foreach($reviews as $review)
     <div class="review">
         <div class="reviewer-info">
             <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="Reviewer Profile Image">
             <p class="name">{{$review->person_username}}</p>
-            
+
         </div>
         <div class="rating">
             <!-- Add star icons or other rating representation here -->
@@ -23,7 +25,8 @@
         <p class="review-content">{{$review->comment}}</p>
     </div>
     @endforeach
-    
+    @endif
+
 </div>
 
 <script>

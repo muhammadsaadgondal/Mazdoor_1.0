@@ -104,12 +104,10 @@
                         <div class="skill-tags-section mt-4 card  ">
                             <h2>Skill Tags</h2>
                             <div class="d-flex flex-wrap">
-                                <span class="badge badge-primary mr-2 mb-2">#HTML</span>
-                                <span class="badge badge-primary mr-2 mb-2">#CSS</span>
-                                <span class="badge badge-primary mr-2 mb-2">#JavaScript</span>
-                                <span class="badge badge-primary mr-2 mb-2">#PHP</span>
-                                <span class="badge badge-primary mr-2 mb-2">#React</span>
+                                @foreach($skills as $skill)
+                                <span class="badge badge-primary mr-2 mb-2">{{$skill->description}}</span>
                                 <!-- Add more skill tags as needed -->
+                                @endforeach
                             </div>
                         </div>
                     </div>

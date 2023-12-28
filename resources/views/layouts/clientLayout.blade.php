@@ -106,14 +106,14 @@
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="total-jobs">
                                     <h5>Total Jobs</h5>
-                                    <p>25</p>
+                                    <p>{{$jobCount}}</p>
                                 </div>
                                 <div class="vertical-line mx-4">
                                     <hr class="vertical-line-hr">
                                 </div>
                                 <div class="rating">
                                     <h5>Rating</h5>
-                                    <p>4.5 <span>(15)</span></p>
+                                    <p>{{$avgStars}} </p>
                                 </div>
                             </div>
                         </div>

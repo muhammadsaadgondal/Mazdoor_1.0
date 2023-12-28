@@ -113,6 +113,7 @@
                                 @endforeach
                                 @endif
                             </div>
+                            <button class="btn btn-primary" href="/addSkill" >add skill</button>
                         </div>
                     </div>
                 </div>

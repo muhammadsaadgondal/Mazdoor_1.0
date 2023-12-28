@@ -29,6 +29,8 @@
             @endif
         </div>
     </div>
+    
+    <button class="btn btn-primary">Add new Site</button>
 </div>
 
 @endsection

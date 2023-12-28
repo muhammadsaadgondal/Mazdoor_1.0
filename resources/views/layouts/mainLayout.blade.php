@@ -104,10 +104,14 @@
                         <div class="skill-tags-section mt-4 card  ">
                             <h2>Skill Tags</h2>
                             <div class="d-flex flex-wrap">
+                                @if(empty($skills))
+                                <p class="text-center">No skills added.</p>
+                                @else
                                 @foreach($skills as $skill)
                                 <span class="badge badge-primary mr-2 mb-2">{{$skill->description}}</span>
                                 <!-- Add more skill tags as needed -->
                                 @endforeach
+                                @endif
                             </div>
                         </div>
                     </div>

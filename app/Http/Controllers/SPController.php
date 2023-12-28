@@ -20,7 +20,9 @@ class SPController extends Controller
             ->select('review.*')
             ->where('person.username', $user->username)
             ->get();
-        return view('reviews', ['reviews' => $reviews, 'user' => $user, 'serviceprovider' => $serviceprovider[0]]);
+            $skills = DB::select("SELECT * FROM skill where serviceprovider_username = '$user->username'");
+       
+        return view('reviews', ['reviews' => $reviews, 'user' => $user, 'serviceprovider' => $serviceprovider[0],'skills'=> $skills]);
     }
     public function fetchReviews(Request $request)
     {
@@ -65,7 +67,9 @@ class SPController extends Controller
 
         $user = $request->session()->get("user");
         $serviceprovider = DB::select("SELECT * FROM serviceprovider where username = '$user->username'");
-        return view('history', ['user' => $user, 'serviceprovider' => $serviceprovider[0]]);
+        $skills = DB::select("SELECT * FROM skill where serviceprovider_username = '$user->username'");
+       
+        return view('history', ['user' => $user, 'serviceprovider' => $serviceprovider[0],'skills'=> $skills]);
     }
     public function showAssignments(Request $request)
     {
@@ -96,8 +100,10 @@ class SPController extends Controller
 
         $user = $request->session()->get("user");
         $serviceprovider = DB::select("SELECT * FROM serviceprovider where username = '$user->username'");
-
-        return view("search", ['user' => $user, "persons" => $persons, "serviceprovider" => $serviceprovider[0]]);
+        $skills = DB::select("SELECT * FROM skill where serviceprovider_username = '$user->username'");
+       
+        return view("search", ['user' => $user, "persons" => $persons, "serviceprovider" => $serviceprovider[0],
+        'skills'=>$skills]);
     }
     public function search(Request $request)
     {
@@ -118,13 +124,16 @@ class SPController extends Controller
             ->select('offer.*')
             ->where('site.person_username', $user->username)
             ->get();
-        return view('offers', ['user' => $user, 'serviceprovider' => $serviceprovider[0], 'offers' => $offers]);
+            $skills = DB::select("SELECT * FROM skill where serviceprovider_username = '$user->username'");
+       
+        return view('offers', ['user' => $user, 'serviceprovider' => $serviceprovider[0], 'offers' => $offers,'skills'=>$skills]);
     }
     public function showSettings(Request $request)
     {
         $user = $request->session()->get("user");
         $serviceprovider = DB::select("SELECT * FROM serviceprovider where username = '$user->username'");
-
-        return view('settings', ['user' => $user, 'serviceprovider' => $serviceprovider[0]]);
+        $skills = DB::select("SELECT * FROM skill where serviceprovider_username = '$user->username'");
+       
+        return view('settings', ['user' => $user, 'serviceprovider' => $serviceprovider[0],'skills'=> $skills]);
     }
 }

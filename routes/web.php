@@ -72,6 +72,7 @@ Route::get('/deleteAccount', 'App\HTTP\Controllers\ClientController@deleteAccoun
 
 Route::post("/signupPage", "App\HTTP\Controllers\signupPage@addPerson");
 
+Route::post('/c_jobs', 'App\HTTP\Controllers\ClientController@deleteSite');
 Route::post("/serviceproviderSignupPage", "App\HTTP\Controllers\signupPage@addServiceProvider");
 
 Route::post("/loginPage","App\HTTP\Controllers\loginPage@retrieve");

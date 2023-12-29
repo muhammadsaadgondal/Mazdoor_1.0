@@ -37,12 +37,20 @@
             <div class="col-lg-8">
                 <div class="card profile-card">
 
-                    <div class="cover-photo">
-                        <img class="cover-image" src="https://i.ytimg.com/vi/DPQdnMx7FPc/maxresdefault.jpg" alt="Cover Photo">
+                <div class="cover-photo">
+                    @if ($user->cover)
+                        <img src="data:image/{{$user->cover_ext}};base64,{{ base64_encode($user->cover) }}" alt="User Image">
+                    @else
+                        <img src="https://media.istockphoto.com/id/1264334837/photo/work-safety-protection-equipment-industrial-protective-gear-on-wooden-table-red-color.jpg?s=612x612&w=0&k=20&c=E68NB6JHK3XKH8kxWOqASq0iinxN2cbnfw-04UZzfYg=" alt="Cover Image">
+                    @endif
                     </div>
 
                     <div class="profile-photo">
-                        <img src="https://t4.ftcdn.net/jpg/03/64/21/11/360_F_364211147_1qgLVxv1Tcq0Ohz3FawUfrtONzz8nq3e.jpg" alt="Profile Photo">
+                    @if ($user->picture)
+                        <img src="data:image/{{$user->pic_ext}};base64,{{ base64_encode($user->picture) }}" alt="User Image">
+                    @else
+                        <img src="https://cdn-icons-png.flaticon.com/512/2919/2919906.png" alt="User Image">
+                    @endif
                     </div>
                     <div class="profile-info">
                         <div class="name-location">

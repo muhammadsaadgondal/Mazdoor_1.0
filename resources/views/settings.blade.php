@@ -6,7 +6,7 @@
     <h2>Profile Settings</h2>
 
     <!-- Update Profile Form -->
-    <form method="POST" action="/settings">
+    <form method="POST" action="/settings" enctype="multipart/form-data">
         @csrf
         <label for="f_name">First Name:</label>
         <input type="f_name" name="f_name" value="{{$user->f_name}}">
@@ -20,6 +20,11 @@
         <label for="phone">Contact No:</label>
         <input type="tel" name="phone" value="{{$user->phone}}">
 
+        <label for="image">Change Profile Picture</label>
+        <input type="file" name="image" id="image">
+
+        <label for="cover">Change Cover</label>
+        <input type="file" name="cover" id="cover">
         <!-- Add more fields for other profile settings -->
         <button type="submit" name="update_profile">Update Profile</button>
     </form>

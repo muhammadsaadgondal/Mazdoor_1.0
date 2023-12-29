@@ -105,4 +105,9 @@ class ClientController extends Controller
         DB::delete("DELETE FROM person where username='$user->username'");
         return redirect('/loginPage');
     }
+    public function deleteSite(Request $request){
+        $site_id = $request->input('site_id');
+        DB::delete("DELETE from `site` where site_id = '$site_id'");
+        return redirect()->back();
+    }
 }

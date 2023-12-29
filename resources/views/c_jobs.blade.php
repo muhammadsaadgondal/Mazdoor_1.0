@@ -21,7 +21,11 @@
                     <p class="card-text">Wage: Rs/4000-</p>
                     <p class="card-text">{{$site->details}}</p>
                     <p class="card-text">Status: In Progress</p>
-                    <a href="#" class="btn btn-danger">Delete</a>
+                    <form action="/c_jobs" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="text" name="site_id" id="site_id" value="{{$site->site_id}}" hidden>
+                        <input type="submit" value="Delete" class="btn btn-danger">
+                    </form>
                 </div>
             </div>
 

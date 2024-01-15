@@ -86,6 +86,8 @@ Route::post("/addJob", "App\HTTP\Controllers\\forms@addJob");
 Route::post("/c_settings","App\HTTP\Controllers\Shared@updateProfile");
 Route::post("/settings","App\HTTP\Controllers\Shared@updateProfile");
 
+Route::post("/add_new_site","App\HTTP\Controllers\Shared@addSite");
+Route::delete('/delete_site/{siteId}', "App\HTTP\Controllers\Shared@deleteSite")->name('delete_site');
 
 
 

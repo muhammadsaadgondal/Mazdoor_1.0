@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Dotenv\Validator;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
@@ -44,5 +45,29 @@ class Shared extends Controller
         $user = DB::select("SELECT * FROM person where username = '$user->username'");
         $request->session()->put("user", $user[0]);
         return redirect()->back();
+    }
+
+    public function addSite(Request $request)
+    {
+        $user = $request->session()->get('user');
+
+        // Assuming you have a 'sites' table in your database
+        DB::table('site')->insert([
+            'location' => $request->input('location'),
+            'details' => $request->input('details'),
+            'address' => $request->input('address'),
+            'person_username'=>$user->username
+        ]);
+
+        // Redirect back with a success message
+        return redirect()->back()->with('success', 'Site added successfully!');
+    }
+
+    public function deleteSite($siteId)
+    {
+        // Assuming you have a 'sites' table in your database
+        DB::table('site')->where('site_id', $siteId)->delete();
+
+        return redirect()->back()->with('success', 'Site deleted successfully!');
     }
 }
